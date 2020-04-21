@@ -1,0 +1,18 @@
+logLevel = "DEBUG"
+defaultEntryPoints = ["http", "https"]
+[api]
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+#  [entryPoints.http.redirect]
+#    entryPoint = "https"
+  [entryPoints.https]
+    address = ":443"
+  [entryPoints.https.tls]
+  [entrypoints.smtp]
+    address = ":25"
+[docker]
+domain = "docker.local"
+watch = true
+swarmMode = true
+#exposedbydefault = false

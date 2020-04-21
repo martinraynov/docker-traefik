@@ -1,0 +1,24 @@
+version: '3.7'
+
+networks:
+  lb-common:
+    name: lb-common 
+    driver: overlay
+    attachable: true
+
+services:
+  reverse-proxy:
+    image: traefik:v1.7.14 # The official Traefik docker image
+    #command: --api --docker
+    ports:
+      - "80:80"     # The HTTP port
+      - "8080:80"   # The HTTP port
+      - "443:443"   # The HTTPS port
+      - "8443:443"  # The HTTPS port
+      - "25:25"     # The SMPT port
+      - "8081:8080" # The Web UI (enabled by --api)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # 
+      - ./traefik.toml:/etc/traefik/traefik.toml # 
+    networks:
+      - lb-common
