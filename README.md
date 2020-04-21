@@ -10,7 +10,7 @@ You can check the containers that are routed via the Traefik application by goin
 ## Start the container
 
 ```bash
-make run
+make start
 ```
 
 ## Stop the container

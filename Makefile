@@ -8,8 +8,8 @@ help: ## Prints this help message
 ### MAIN FUNCTIONS ###
 ######################
 
-.PHONY: run
-run: ## Start the Traefik docker container
+.PHONY: start
+start: ## Start the Traefik docker container
 	$(info $(M) Starting an instance of Traefik at : http://127.0.0.1:8081/)
 	@docker stack rm traefik
 	@docker stack deploy -c ./docker/docker-compose-swarm.yml traefik
