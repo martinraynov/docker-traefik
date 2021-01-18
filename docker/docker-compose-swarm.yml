@@ -22,3 +22,7 @@ services:
       - ./traefik.toml:/etc/traefik/traefik.toml # 
     networks:
       - lb-common
+      ### Add aliases for application that must never be called inside the network
+      # lb-common:
+      #   aliases: 
+      #     - sonarqube.local.io
