@@ -7,6 +7,10 @@ Current used version is the **1.7.14**
 
 You can check the containers that are routed via the Traefik application by going to http://127.0.0.1:8081/dashboard/
 
+## Prerequirements
+
+You must have a working docker swarm stack installed on your machine to use the commands
+
 ## Start the container
 
 ```bash
